@@ -1,3 +1,4 @@
 <h1>Welcome Arimac Internship </h1>
-<h1> data pass from url after / : {{$name}} </h1>
-this name: is shown when user requests a url which is not know
+<a href="about">about us</a><br>
+<a href="hello">hello page</a><br>
+<a href="contact">contact us</a>

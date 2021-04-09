@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{name}', function ($name) {
-    return view('welcome',['name'=>$name]);
+Route::get('/', function () {
+    return view('welcome');
 });
 
 Route::get('/hello',function(){
@@ -24,4 +24,7 @@ Route::get('/hello',function(){
 
 Route::view("about",'about');
 
-Route::view("contact",'contact');
+Route::get('/contact',function(){
+    return redirect("about");
+
+});
