@@ -46,3 +46,6 @@ Route::post("newusers", [HTMLUserController::class, 'getData']);
 
 //route for page/view
 Route::view("login", "newusers");
+
+Route::view("home", "home");
+Route::view("noaccess", "noaccess");
