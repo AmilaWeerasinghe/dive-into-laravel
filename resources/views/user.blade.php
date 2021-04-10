@@ -1,3 +1,4 @@
+@include('header')
 <x-header data="user component header" />
 <h1>users</h1>
 <h2>name : {{count($name)}}</h2>
@@ -15,8 +16,16 @@
     @endfor
 
 
+    @include('inner')
+
+
 
     <h3>View for each syntax</h3>
     @foreach($name as $user)
     <h2>{{$user}}</h2>
     @endforeach
+
+    <script>
+        var data = @json($name);
+        console.warn(data)
+    </script>
