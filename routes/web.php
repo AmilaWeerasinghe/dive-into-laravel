@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
+use App\Http\Controllers\UsersControl;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,11 @@ Route::get('/contact',function(){
 });
 
 Route::get("users",[Users::class,'index']);
+
+Route::get("user",[UsersControl::class,'loadView']);
+
+
+//Route::get('/user',function(){
+  //  return view("user");
+
+//});
