@@ -9,6 +9,6 @@ class UsersControl extends Controller
     //
     function loadView()
     {
-        return view("user",["name"=>"Amila Weerasinghe"]);
+        return view("user", ['name' => ['Amila', 'arimac', 'intern']]);
     }
 }
