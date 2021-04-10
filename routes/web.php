@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\UsersControl;
+use App\Http\Controllers\HTMLUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,24 +20,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello',function(){
+Route::get('/hello', function () {
     return view('hello');
-
 });
 
-Route::view("about",'about');
+Route::view("about", 'about');
 
-Route::get('/contact',function(){
+Route::get('/contact', function () {
     return redirect("about");
-
 });
 
-Route::get("users",[Users::class,'index']);
+Route::get("users", [Users::class, 'index']);
 
-Route::get("user",[UsersControl::class,'loadView']);
+Route::get("user", [UsersControl::class, 'loadView']);
 
 
 //Route::get('/user',function(){
-  //  return view("user");
+//  return view("user");
 
 //});
+
+
+//route for controller
+Route::post("newusers", [HTMLUserController::class, 'getData']);
+
+//route for page/view
+Route::view("login", "newusers");
