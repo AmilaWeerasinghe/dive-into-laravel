@@ -49,3 +49,7 @@ Route::view("login", "newusers");
 
 Route::view("home", "home");
 Route::view("noaccess", "noaccess");
+
+Route::group(['middleware' => ['protectedPage']], function () {
+    Route::view('users', 'users');
+});
