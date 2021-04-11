@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\UsersControl;
 use App\Http\Controllers\HTMLUserController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\modelUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,9 +49,14 @@ Route::post("newusers", [HTMLUserController::class, 'getData']);
 //route for page/view
 Route::view("login", "newusers");
 
-Route::view("home", "home");
+Route::view("home", "home")->middleware('routeProtected');
 Route::view("noaccess", "noaccess");
 
+//group middleware
 Route::group(['middleware' => ['protectedPage']], function () {
     Route::view('users', 'users');
 });
+
+Route::get('dbuser', [UserController::class, 'index']);
+
+Route::get('modelusers', [modelUserController::class, 'getData']);
