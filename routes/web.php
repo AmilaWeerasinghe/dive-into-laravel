@@ -6,7 +6,7 @@ use App\Http\Controllers\UsersControl;
 use App\Http\Controllers\HTMLUserController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\modelUserController;
-
+use App\Http\Controllers\HttpClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,3 +60,4 @@ Route::group(['middleware' => ['protectedPage']], function () {
 Route::get('dbuser', [UserController::class, 'index']);
 
 Route::get('modelusers', [modelUserController::class, 'getData']);
+Route::get('httpclient', [HttpClientController::class, 'index']);
