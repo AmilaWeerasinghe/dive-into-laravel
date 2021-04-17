@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\modelUserController;
 use App\Http\Controllers\HttpClientController;
 use App\Http\Controllers\httpController;
+use App\Http\Controllers\userAuth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,3 +66,14 @@ Route::get('httpclient', [HttpClientController::class, 'index']);
 
 route::post("conhttprequest", [httpController::class, 'testRequest']);
 Route::view('httprequest', 'httprequest');
+
+Route::view('newlog', 'login');
+Route::post('autheduser', [userAuth::class, 'userLogin']);
+Route::view('profile', 'profile');
+
+Route::get('/logout', function () {
+    if (session()->has('user')) {
+        session()->pull('user');
+    }
+    return redirect('newlog');
+});
