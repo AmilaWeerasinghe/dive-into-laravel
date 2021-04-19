@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\modelUserController;
 use App\Http\Controllers\HttpClientController;
 use App\Http\Controllers\httpController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\userAuth;
 /*
 |--------------------------------------------------------------------------
@@ -77,3 +78,7 @@ Route::get('/logout', function () {
     }
     return redirect('newlog');
 });
+
+
+Route::view("upload", 'upload');
+Route::post("upload", [UploadController::class, 'index']);
