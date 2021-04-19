@@ -10,6 +10,8 @@ use App\Http\Controllers\HttpClientController;
 use App\Http\Controllers\httpController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\userAuth;
+use App\Http\Controllers\MemberController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,3 +84,4 @@ Route::get('/logout', function () {
 
 Route::view("upload", 'upload');
 Route::post("upload", [UploadController::class, 'index']);
+Route::get("list", [MemberController::class, 'show']);
