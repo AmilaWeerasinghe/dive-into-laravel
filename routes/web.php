@@ -11,6 +11,8 @@ use App\Http\Controllers\httpController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\userAuth;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\addMemberController;
+use App\Http\Controllers\memberDeleteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,3 +87,8 @@ Route::get('/logout', function () {
 Route::view("upload", 'upload');
 Route::post("upload", [UploadController::class, 'index']);
 Route::get("list", [MemberController::class, 'show']);
+Route::view("add", "addMember");
+Route::post('add', [addMemberController::class, 'addData']);
+
+Route::get('del', [memberDeleteController::class, 'list']);
+Route::get('delete/{Id}', [memberDeleteController::class, 'delete']);
