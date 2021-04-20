@@ -11,7 +11,7 @@
     <tr>
         <td>{{$member['Name']}}</td>
         <td>{{$member['Age']}}</td>
-        <td>{{$member['ID']}}</td>
+        <td>{{$member['id']}}</td>
         <td>{{$member['City']}}</td>
     </tr>
 

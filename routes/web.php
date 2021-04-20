@@ -92,3 +92,5 @@ Route::post('add', [addMemberController::class, 'addData']);
 
 Route::get('del', [memberDeleteController::class, 'list']);
 Route::get('delete/{Id}', [memberDeleteController::class, 'delete']);
+Route::get('edit/{Id}', [memberDeleteController::class, 'showData']);
+Route::post('edit', [memberDeleteController::class, 'Update']);
